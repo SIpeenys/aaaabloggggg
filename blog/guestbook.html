@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板 - My Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">My Blog</a>
+            <ul class="nav-links">
+                <li><a href="/">首页</a></li>
+                <li><a href="/about.html">关于</a></li>
+                <li><a href="/guestbook.html" class="active">留言板</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 留言板内容 -->
+    <main class="container">
+        <section class="guestbook-page">
+            <h1>📝 留言板</h1>
+            <p class="guestbook-subtitle">留下你想说的话吧～</p>
+
+            <!-- 留言表单 -->
+            <form class="message-form" id="messageForm">
+                <div class="form-row">
+                    <input type="text" id="nickname" class="form-input" placeholder="你的昵称（必填）" maxlength="20" required>
+                    <input type="email" id="email" class="form-input" placeholder="邮箱（可选，用于展示 Gravatar）" maxlength="50">
+                </div>
+                <textarea id="content" class="form-textarea" placeholder="写下你想说的话（必填）" maxlength="500" required></textarea>
+                <div class="form-footer">
+                    <span class="char-count"><span id="charCount">0</span>/500</span>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="btn-text">发布留言</span>
+                        <span class="btn-loading" style="display:none">发布中...</span>
+                    </button>
+                </div>
+            </form>
+
+            <!-- 留言列表 -->
+            <div class="messages-section">
+                <div class="messages-header">
+                    <h2>全部留言</h2>
+                    <span class="message-count" id="messageCount">0 条留言</span>
+                </div>
+                <div id="messagesList" class="messages-list">
+                    <div class="loading">加载留言中</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 My Blog. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="guestbook.js"></script>
+</body>
+</html>
